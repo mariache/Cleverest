@@ -1,0 +1,52 @@
+﻿@using Cleverest.Models;
+@using Cleverest.Common;
+@using Cleverest.Entities.Enums;
+@{
+    if (!User.Identity.IsAuthenticated 
+        || !User.IsInRole(AppRoles.Moderator.ToString()) 
+        || Container.CurrentTestId == null)
+    {
+        Response.Redirect("/");
+    }
+    var testLogic = Resolver.TestLogic;
+    var questionLogic = Resolver.QuestionLogic;
+    var ratingLogic = Resolver.RatingLogic;
+    var userLogic = Resolver.UserLogic;
+
+    if (IsPost)
+    {
+        var moderatorId = userLogic.GetUserId(User.Identity.Name);
+
+        testLogic.Add(Container.CurrentTest, moderatorId);
+        Response.Redirect("~/Pages/TestChecked");
+    }
+
+    Layout = "~/_basicLayout.cshtml";
+
+
+    var testId = Container.CurrentTestId;
+    var test = testLogic.GetTestForCheck(testId);
+    var questions = questionLogic.GetQuestionsForTest(testId).ToArray();
+
+    Container.CurrentTest = test;
+}
+
+<div class="container-fluid text-center">Name : @test.Name</div>
+<div class="container-fluid text-center">Topic : @test.Topic</div>
+
+<form action="~/Pages/CheckTest" method="post">
+    @for (var i = 0; i < 10; i++)
+    {
+    <div class="border">
+        <div class="container">Text : @questions[i].Text</div>
+        <div class="container">Option A : @questions[i].VarA</div>
+        <div class="container">Option B : @questions[i].VarB</div>
+        <div class="container">Option C : @questions[i].VarC</div>
+        <div class="container">Option D : @questions[i].VarD</div>
+        <div class="container">Answer : @questions[i].Answer</div>
+        
+    </div>
+    }
+<div class="container"><button>Approve</button></div>
+</form>
+<div class="container alert-danger"><a href="~/Pages/TestChecked">DELETE</a></div>

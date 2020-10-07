@@ -1,0 +1,53 @@
+﻿@using Cleverest.Entities.Enums;
+@using Cleverest.Common;
+@{
+    Layout = null;
+
+    var testLogic = Resolver.TestLogic;
+}
+
+
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="container">
+        <div class="row justify-content-md-center">
+
+            @if (User.IsInRole(AppRoles.Player.ToString()))
+            {
+                <div class="col-md-auto">
+                    <a href="~/Pages/Profile">Your profile</a>
+                </div>
+                <div class="col-md-auto">
+                    <a href="~/Pages/Rating">Rating</a>
+                </div>
+                <div class="col-md-auto">
+                    <a href="~/Pages/TestsList">Choose test</a>
+                </div>
+                <div class="col-md-auto">
+                    <a href="~/Pages/NewTest">Suggest a test</a>
+                </div>
+            }
+
+            @if (User.IsInRole(AppRoles.Moderator.ToString()))
+            {
+                <div class="col-md-auto">
+                    <a href="~/Pages/TestsForCheck">Tests for check ( @testLogic.GetTestsForCheck().Count() )</a>
+                </div>
+                <div class="col-md-auto">
+                    <a href="~/Pages/NewTest">Add a new test</a>
+                </div>
+            }
+
+            @if (User.IsInRole(AppRoles.Admin.ToString()))
+            {
+                <div class="col-md-auto">
+                    <a href="~/Pages/UsersList">Show users</a>
+                </div>
+                <div class="col-md-auto">
+                    <a href="~/Pages/Complaints">Сomplaints ( @testLogic.GetComplaints().Count() )</a>
+                </div>
+            }
+        </div>
+    </div>
+}

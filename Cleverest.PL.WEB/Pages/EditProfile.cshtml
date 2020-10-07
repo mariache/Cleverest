@@ -1,0 +1,38 @@
+﻿@using Cleverest.Common;
+@using Cleverest.Entities;
+@{
+    if (!User.Identity.IsAuthenticated || !User.IsInRole("Player"))
+    {
+        Response.Redirect("/");
+    }
+
+    var userLogic = Resolver.UserLogic;
+
+    if (IsPost)
+    {
+        var userInfo = new UserInformationObject()
+        {
+            Name = Request["name"],
+            Surname = Request["surname"],
+            Country = Request["country"],
+            About = Request["about"]
+        };
+
+        userLogic.UpdateInformation(User.Identity.Name, userInfo);
+        Response.Redirect("~/Pages/Profile.cshtml");
+    }
+
+    
+    var userId = userLogic.GetUserId(User.Identity.Name);
+    var information = userLogic.GetUserInformation(userId);
+
+    Layout = "~/_basicLayout.cshtml";
+}
+
+<form action="~/Pages/EditProfile.cshtml" method="post">
+    <div class="container-fluid"><label>Name: <input type="text" name="name" value="@information.Name" /></label></div>
+    <div class="container-fluid"><label>Surname: <input type="text" name="surname" value="@information.Surname" /></label></div>
+    <div class="container-fluid"><label>Country: <input type="text" name="country" value="@information.Country" /></label></div>
+    <div class="container-fluid"><label>About me: <textarea name="about">@information.About</textarea></label></div>
+    <div class="container-fluid"><button>Save</button></div>
+</form>

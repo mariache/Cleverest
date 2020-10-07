@@ -1,0 +1,27 @@
+﻿@using System.Threading;
+@{
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cleverest</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Style/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="container text-center" role="button">
+        <h3 onclick="goHome()">cl<span class="header-text">EVEREST</span></h3>
+    </header>
+    <div>
+        @User.Identity.Name, welcome to the Cleverest!
+
+        <a href="/">Start to test!</a>
+
+    </div>
+</body>
+</html>

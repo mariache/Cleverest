@@ -1,0 +1,105 @@
+﻿@using Cleverest.Entities;
+@using Cleverest.Common;
+@using Cleverest.Entities.Enums;
+@{
+    if (!User.Identity.IsAuthenticated
+        || User.IsInRole(AppRoles.Admin.ToString()))
+    {
+        Response.Redirect("/");
+    }
+
+    Layout = "~/_basicLayout.cshtml";
+
+    var questionLogic = Resolver.QuestionLogic;
+    var testLogic = Resolver.TestLogic;
+    var userLogic = Resolver.UserLogic;
+
+    string sendButtonText;
+
+    if (User.IsInRole(AppRoles.Moderator.ToString()))
+    {
+        sendButtonText = "Add a new test";
+    }
+    else
+    {
+        sendButtonText = "Suggest a new test";
+    }
+
+    if (IsPost)
+    {
+        var test = new Test()
+        {
+            Id = Guid.NewGuid().ToString(),
+            Name = Request["testName"].Trim(),
+            Topic = Request["testTopic"]
+        };
+
+        for (int i = 1; i < 11; i++)
+        {
+            var question = new Question
+            {
+                Id = Guid.NewGuid().ToString(),
+                TestId = test.Id,
+                Topic = Request["testTopic"],
+                Text = Request[$"Question_({i})_Text"].Trim(),
+                VarA = Request[$"Question_({i})_option_A"].Trim(),
+                VarB = Request[$"Question_({i})_option_B"].Trim(),
+                VarC = Request[$"Question_({i})_option_C"].Trim(),
+                VarD = Request[$"Question_({i})_option_D"].Trim(),
+                Answer = Request[$"Question_({i})_answer"]
+            };
+            questionLogic.Add(question);
+        }
+
+        if (User.IsInRole(AppRoles.Moderator.ToString()))
+        {
+            var moderatorId = userLogic.GetUserId(User.Identity.Name);
+            testLogic.Add(test, moderatorId);
+        }
+        else
+        {
+            testLogic.AddTestForCheck(test);
+        }
+
+        Response.Redirect("~/Pages/NewTestSuccess.cshtml");
+    }
+
+}
+
+<div class="container-fluid">
+
+    <div class="container text-center">New test</div>
+
+    <form action="~/Pages/NewTest.cshtml" method="post">
+        <div class="container text-center">
+            <label>Name:<input type="text" name="testName" value="" /></label>
+            <select required size="1" name="testTopic">
+                <option disabled>Choose Topic</option>
+                <option value="Animals">Animals</option>
+                <option value="Cars">Cars</option>
+                <option value="Sports">Sports</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        @for (var i = 1; i < 11; i++)
+        {
+            <div class="container border">
+                <p>@i question:</p>
+                <div><label>Text:<input type="text" name="Question_(@i)_Text" value="" /></label></div>
+                <div><label>option "A":<input type="text" name="Question_(@i)_option_A" value="" /></label></div>
+                <div><label>option "B":<input type="text" name="Question_(@i)_option_B" value="" /></label></div>
+                <div><label>option "C":<input type="text" name="Question_(@i)_option_C" value="" /></label></div>
+                <div><label>option "D":<input type="text" name="Question_(@i)_option_D" value="" /></label></div>
+                <select required size="1" name="Question_(@i)_answer">
+                    <option disabled>Choose right answer</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+            </div>
+        }
+
+        <button>@sendButtonText</button>
+    </form>
+</div>

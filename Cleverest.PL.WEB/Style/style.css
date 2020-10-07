@@ -1,0 +1,13 @@
+﻿h3 {
+    font-style: italic;
+}
+
+.header-text{
+    color: red;
+    font-style: normal;
+    font-size: larger;
+}
+
+.hover-gray :hover{
+    background-color: gray;
+}

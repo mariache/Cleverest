@@ -1,0 +1,24 @@
+﻿@{ 
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cleverest</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Style/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="container text-center" role="button">
+        <h3 onclick="goHome()">cl<span class="header-text">EVEREST</span></h3>
+    </header>
+        @RenderPage("~/Pages/Partial/_loginPartial.cshtml")
+        @RenderPage("~/Pages/Partial/_navigationPartial.cshtml")
+        @RenderBody()
+    
+    <script src="~/Scripts/index.js"></script>
+</body>
+</html>

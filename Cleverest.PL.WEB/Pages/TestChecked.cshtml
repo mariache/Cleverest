@@ -1,0 +1,11 @@
+﻿@using Cleverest.Common;
+@using Cleverest.Models;
+@{
+    var testLogic = Resolver.TestLogic;
+    testLogic.RemoveFromCheck(Container.CurrentTest.Id);
+    Container.Clear();
+    Response.Redirect("/");
+
+}
+
+

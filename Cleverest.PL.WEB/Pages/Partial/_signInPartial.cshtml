@@ -1,0 +1,32 @@
+﻿
+@{
+    string errorMessage = "";
+    if (IsPost)
+    {
+        var login = Request["login"].Trim();
+        var password = Request["password"];
+
+        if (Cleverest.Models.Authentification.CanLogin(login, password))
+        {
+            FormsAuthentication.SetAuthCookie(login, createPersistentCookie: true);
+            Response.Redirect("/");
+        }
+        errorMessage = "Login or password error!";
+    }
+}
+
+<form action="/" method="post">
+    <div class="container ">
+        <input type="text" name="login" value="" placeholder="Login" />
+    </div>
+    <div class="container">
+        <input type="password" name="password" value="" placeholder="Password" />
+    </div>
+    <div class="container">
+        <button>Sign In</button>
+    </div>
+    <div class="container alert-danger">
+        @errorMessage
+    </div>
+</form>
+

@@ -1,0 +1,11 @@
+﻿h1 {
+    background: rgba(78, 235, 64, 0.8);
+    margin: 30px auto;
+    padding: 20px;
+    width: 70%;
+    text-align: center;
+    border-radius: 10px 10px 10px 50px;
+    box-shadow: 20px 20px 20px rgb(150, 221, 245);
+    color: red;
+    font-style: italic;
+}

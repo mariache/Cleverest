@@ -1,0 +1,37 @@
+﻿@using System.Threading;
+@using Cleverest.Entities.Enums;
+@using Cleverest.Models;
+@{
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cleverest</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Style/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="container text-center" role="button">
+        <h3 onclick="goHome()">cl<span class="header-text">EVEREST</span></h3>
+    </header>
+    <div>
+
+        @if (User.IsInRole(AppRoles.Moderator.ToString()))
+        {
+            <div>New test added!</div>
+        }
+        else
+        {
+            <div>Test added to moderation!</div>
+        }
+
+        <a href="/">Continue</a>
+
+    </div>
+</body>
+</html>

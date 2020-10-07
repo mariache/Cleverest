@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="container">
+            <div>@User.Identity.Name</div>
+            <div><a href="~/Pages/SignOut">Sign Out</a></div>
+        </div>
+    }
+    else
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    Hello, guest!
+                </div>
+                <div class="col-10">
+                    <div><a href="~/Pages/RegistrationPage">Sign up</a></div>
+                </div>
+            </div>
+        </div>
+        @RenderPage("~/Pages/Partial/_signInPartial.cshtml")
+    }

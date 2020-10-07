@@ -1,0 +1,63 @@
+﻿/** {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: white;
+}
+
+body {
+    background: rgb(148, 163, 248);
+}
+
+.wrapper {
+    width: 400px;
+    height: 300px;
+    background: rgb(6, 144, 207);
+    margin: auto;
+    margin-top: 100px;
+    border: 4px solid rgb(0, 117, 178);
+}
+
+.header {
+    height: 80px;
+    text-align: left;
+    padding: 30px;
+    border-bottom: 1px solid white;
+    font-weight: 200;
+}
+
+.inline-block-element {
+    display: inline-block;
+}
+
+label {
+    display: block;
+    margin-bottom: 3px;
+}
+
+div {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#button {
+    color: black;
+    background: rgb(255, 223, 127);
+    height: 25px;
+    width: 80px;
+    margin-top: 15px;
+}
+
+input {
+    border: none;
+    height: 20px;
+}
+
+#email {
+    width: 325px;
+}
+
+.passwords {
+    width: 150px;
+}*/

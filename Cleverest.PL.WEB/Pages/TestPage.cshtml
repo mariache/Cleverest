@@ -1,0 +1,74 @@
+﻿@using Cleverest.Models;
+@using Cleverest.Common;
+@{
+    var testLogic = Resolver.TestLogic;
+    var questionLogic = Resolver.QuestionLogic;
+    var ratingLogic = Resolver.RatingLogic;
+
+    if (IsPost)
+    {
+        int score = 0;
+        int bonus = 0;
+
+        foreach(var question in Container.CurrentQuestions)
+        {
+            var rightAnswer = questionLogic.GetAnswer(question.Id);
+
+            if (rightAnswer == Request[$"Question_({question.Id})_answer"])
+            {
+                score += 10;
+            }
+        }
+
+        if(score == 100)
+        {
+            bonus = 50;
+        }
+
+        if(score > 0)
+        {
+            ratingLogic.AddPoints(User.Identity.Name, score + bonus);
+        }
+
+        Container.Score = score;
+        Container.Bonus = bonus;
+        Response.Redirect("~/Pages/TestResult");
+    }
+
+    Layout = "~/_basicLayout.cshtml";
+
+
+
+
+    var testId = Container.CurrentTestId;
+
+    var test = testLogic.GetById(testId);
+    var questions = questionLogic.GetQuestionsForTest(testId).ToArray();
+
+    Container.CurrentQuestions = questions;
+    Container.CurrentTestName = test.Name;
+
+}
+
+<div class="container-fluid text-center">@test.Name</div>
+
+<form action="~/Pages/TestPage" method="post">
+    @for (var i = 0; i < 10; i++)
+    {
+        <div class="border">
+            <div>@questions[i].Text</div>
+            <div>Option A : @questions[i].VarA</div>
+            <div>Option B : @questions[i].VarB</div>
+            <div>Option C : @questions[i].VarC</div>
+            <div>Option D : @questions[i].VarD</div>
+            <select required size="1" name="Question_(@questions[i].Id)_answer">
+                <option disabled>Choose right answer</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>
+        </div>
+    }
+<button>Pass</button>
+</form>

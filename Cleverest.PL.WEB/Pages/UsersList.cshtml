@@ -1,0 +1,61 @@
+﻿@using Cleverest.Common; 
+@using Cleverest.Entities;
+@using Cleverest.Entities.Enums;
+@{
+    if (!User.Identity.IsAuthenticated || !User.IsInRole(AppRoles.Admin.ToString())){
+        Response.Redirect("/");
+    }
+    var userLogic = Resolver.UserLogic;
+
+    if (IsPost)
+    {
+        var userId = Request["id"];
+        userLogic.Remove(userId);
+
+    }
+    Layout = "~/_basicLayout.cshtml";
+
+    var users = new List<User>();
+    users.AddRange(userLogic.GetAllByRole(AppRoles.Admin.ToString()));
+    users.AddRange(userLogic.GetAllByRole(AppRoles.Moderator.ToString()));
+    users.AddRange(userLogic.GetAllByRole(AppRoles.Player.ToString()));
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            Id
+        </div>
+        <div class="col-sm">
+            Name
+        </div>
+        <div class="col-sm">
+            Role
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+    <hr />
+    @foreach (var user in users)
+    {
+        <form action="~/Pages/UsersList" method="post">
+            <div class="row">
+                <div class="col-sm">
+                    @user.Id
+                </div>
+                <div class="col-sm">
+                    @user.Login
+                </div>
+                <div class="col-sm">
+                    @user.Role
+                </div>
+                <div class="col-sm">
+                    <button onclick="confirm()">DELETE</button>
+                </div>
+                <input type="hidden" name="id" value="@user.Id" />
+            </div>
+        </form>
+    }
+</div>
+

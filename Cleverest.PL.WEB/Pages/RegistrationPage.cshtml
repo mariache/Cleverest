@@ -1,0 +1,70 @@
+﻿@using Cleverest.Common;
+@using Cleverest.Entities;
+@using Cleverest.Models;
+@{
+    if (User.Identity.IsAuthenticated)
+    {
+        Response.Redirect("/");
+    }
+
+    string errorMessage = null;
+
+    
+    var authLogic = Resolver.AuthentificationLogic;
+    var userLogic = Resolver.UserLogic;
+    var ratingLogic = Resolver.RatingLogic;
+    var roleLogic = Resolver.RoleLogic;
+
+    if (IsPost)
+    {
+        var login = Request["login"].Trim();
+        var password = Request["password"];
+
+        if (login.Length == 0 || password.Length == 0)
+        {
+            errorMessage = "Enter your login and password!";
+        }
+        else if (!authLogic.AvailableLogin(login))
+        {
+            errorMessage = "This login is taken!";
+        }
+        else
+        {
+            var newUser = new User(login, password);
+
+            userLogic.Add(newUser);
+
+            FormsAuthentication.SetAuthCookie(login, createPersistentCookie: true);
+            Response.Redirect("~/Pages/registrationSuccess.cshtml");
+        }
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleverest</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Style/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="container text-center" role="button">
+        <h3 onclick="goHome()">cl<span class="header-text">EVEREST</span></h3>
+    </header>
+    <div class="container">
+        <form action="~/Pages/registrationPage.cshtml" method="post">
+            <div>
+                <input type="text" name="login" id="login" placeholder="Login" value=" ">
+            </div>
+            <div>
+                <input type="password" name="password" id="password" placeholder="Password" value=" ">
+            </div>
+            <button>Create account</button>
+            <div>@errorMessage</div>
+        </form>
+    </div>
+    <script src="~/Scripts/index.js"></script>
+</body>
+</html>

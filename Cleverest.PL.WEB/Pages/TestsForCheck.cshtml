@@ -1,0 +1,37 @@
+﻿@using Cleverest.Common;
+@using Cleverest.Models;
+@{
+    Layout = "~/_basicLayout.cshtml";
+
+    if (IsPost)
+    {
+        Container.CurrentTestId = Request["id"];
+        Response.Redirect("~/Pages/CheckTest");
+    }
+
+    //if (!User.Identity.IsAuthenticated)
+    //{
+    //    Response.Redirect("/");
+    //}
+
+    var testLogic = Resolver.TestLogic;
+
+    var testList = testLogic.GetTestsForCheck().ToArray();
+
+
+}
+
+@foreach (var test in testList)
+{
+    <div>
+        <div>@test.Name</div>
+        <form action="~/Pages/TestsForCheck" method="post">
+            <button>Check</button>
+            <input type="hidden" name="id" value="@test.Id" />
+        </form>
+        <br />
+    </div>
+
+}
+
+

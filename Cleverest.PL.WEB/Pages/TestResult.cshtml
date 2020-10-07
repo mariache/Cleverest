@@ -1,0 +1,12 @@
+﻿@using Cleverest.Models;
+@{
+    Layout = "~/_basicLayout.cshtml";
+}
+
+<div>@Container.CurrentTestName</div>
+<div>Test completed! </div>
+
+<div>Score: @Container.Score</div>
+<div>Bonus: @Container.Bonus</div>
+<div>Total: @(Container.Score + Container.Bonus)</div>
+<div>@User.Identity.Name</div>

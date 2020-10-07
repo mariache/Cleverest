@@ -1,0 +1,20 @@
+﻿@using Cleverest.Common;
+@{
+    if (!User.Identity.IsAuthenticated)
+    {
+        Response.Redirect("/");
+    }
+
+    Layout = "~/_basicLayout.cshtml";
+
+    var userLogic = Resolver.UserLogic;
+    var userId = userLogic.GetUserId(User.Identity.Name);
+    var information = userLogic.GetUserInformation(userId);
+}
+
+
+<div class="container">Name : @information.Name</div>
+<div class="container">Surname : @information.Surname</div>
+<div class="container">Country : @information.Country</div>
+<div class="container">About me : @information.About</div>
+<div class="container"><a href="~/Pages/EditProfile.cshtml">Edit</a></div>
