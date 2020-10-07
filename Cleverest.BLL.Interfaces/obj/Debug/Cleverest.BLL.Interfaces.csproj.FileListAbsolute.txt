@@ -1,0 +1,9 @@
+d:\User\Desktop\Финальник\Cleverest.BLL.Interfaces\bin\Debug\Cleverest.BLL.Interfaces.dll
+d:\User\Desktop\Финальник\Cleverest.BLL.Interfaces\bin\Debug\Cleverest.BLL.Interfaces.pdb
+d:\User\Desktop\Финальник\Cleverest.BLL.Interfaces\bin\Debug\Cleverest.Entities.dll
+d:\User\Desktop\Финальник\Cleverest.BLL.Interfaces\bin\Debug\Cleverest.Entities.pdb
+d:\User\Desktop\Финальник\Cleverest.BLL.Interfaces\obj\Debug\Cleverest.BLL.Interfaces.csprojAssemblyReference.cache
+d:\User\Desktop\Финальник\Cleverest.BLL.Interfaces\obj\Debug\Cleverest.BLL.Interfaces.csproj.CoreCompileInputs.cache
+d:\User\Desktop\Финальник\Cleverest.BLL.Interfaces\obj\Debug\Cleverest.BLL.Interfaces.csproj.CopyComplete
+d:\User\Desktop\Финальник\Cleverest.BLL.Interfaces\obj\Debug\Cleverest.BLL.Interfaces.dll
+d:\User\Desktop\Финальник\Cleverest.BLL.Interfaces\obj\Debug\Cleverest.BLL.Interfaces.pdb

@@ -1,0 +1,17 @@
+d:\User\Desktop\Финальник\Cleverest.Common\bin\Debug\Cleverest.Common.dll
+d:\User\Desktop\Финальник\Cleverest.Common\bin\Debug\Cleverest.Common.pdb
+d:\User\Desktop\Финальник\Cleverest.Common\bin\Debug\Cleverest.BLL.dll
+d:\User\Desktop\Финальник\Cleverest.Common\bin\Debug\Cleverest.BLL.Interfaces.dll
+d:\User\Desktop\Финальник\Cleverest.Common\bin\Debug\Cleverest.DAO.dll
+d:\User\Desktop\Финальник\Cleverest.Common\bin\Debug\Cleverest.DAO.Interfaces.dll
+d:\User\Desktop\Финальник\Cleverest.Common\bin\Debug\Cleverest.Entities.dll
+d:\User\Desktop\Финальник\Cleverest.Common\bin\Debug\Cleverest.BLL.Interfaces.pdb
+d:\User\Desktop\Финальник\Cleverest.Common\bin\Debug\Cleverest.BLL.pdb
+d:\User\Desktop\Финальник\Cleverest.Common\bin\Debug\Cleverest.DAO.Interfaces.pdb
+d:\User\Desktop\Финальник\Cleverest.Common\bin\Debug\Cleverest.DAO.pdb
+d:\User\Desktop\Финальник\Cleverest.Common\bin\Debug\Cleverest.Entities.pdb
+d:\User\Desktop\Финальник\Cleverest.Common\obj\Debug\Cleverest.Common.csprojAssemblyReference.cache
+d:\User\Desktop\Финальник\Cleverest.Common\obj\Debug\Cleverest.Common.csproj.CoreCompileInputs.cache
+d:\User\Desktop\Финальник\Cleverest.Common\obj\Debug\Cleverest.Common.csproj.CopyComplete
+d:\User\Desktop\Финальник\Cleverest.Common\obj\Debug\Cleverest.Common.dll
+d:\User\Desktop\Финальник\Cleverest.Common\obj\Debug\Cleverest.Common.pdb

@@ -1,0 +1,13 @@
+d:\User\Desktop\Финальник\Cleverest.BLL\bin\Debug\Cleverest.BLL.dll
+d:\User\Desktop\Финальник\Cleverest.BLL\bin\Debug\Cleverest.BLL.pdb
+d:\User\Desktop\Финальник\Cleverest.BLL\bin\Debug\Cleverest.BLL.Interfaces.dll
+d:\User\Desktop\Финальник\Cleverest.BLL\bin\Debug\Cleverest.DAO.Interfaces.dll
+d:\User\Desktop\Финальник\Cleverest.BLL\bin\Debug\Cleverest.Entities.dll
+d:\User\Desktop\Финальник\Cleverest.BLL\bin\Debug\Cleverest.BLL.Interfaces.pdb
+d:\User\Desktop\Финальник\Cleverest.BLL\bin\Debug\Cleverest.DAO.Interfaces.pdb
+d:\User\Desktop\Финальник\Cleverest.BLL\bin\Debug\Cleverest.Entities.pdb
+d:\User\Desktop\Финальник\Cleverest.BLL\obj\Debug\Cleverest.BLL.csprojAssemblyReference.cache
+d:\User\Desktop\Финальник\Cleverest.BLL\obj\Debug\Cleverest.BLL.csproj.CoreCompileInputs.cache
+d:\User\Desktop\Финальник\Cleverest.BLL\obj\Debug\Cleverest.BLL.csproj.CopyComplete
+d:\User\Desktop\Финальник\Cleverest.BLL\obj\Debug\Cleverest.BLL.dll
+d:\User\Desktop\Финальник\Cleverest.BLL\obj\Debug\Cleverest.BLL.pdb

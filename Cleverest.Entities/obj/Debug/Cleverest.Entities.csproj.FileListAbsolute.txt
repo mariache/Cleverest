@@ -1,0 +1,6 @@
+d:\User\Desktop\Финальник\Cleverest.Entities\bin\Debug\Cleverest.Entities.dll
+d:\User\Desktop\Финальник\Cleverest.Entities\bin\Debug\Cleverest.Entities.pdb
+d:\User\Desktop\Финальник\Cleverest.Entities\obj\Debug\Cleverest.Entities.csproj.CoreCompileInputs.cache
+d:\User\Desktop\Финальник\Cleverest.Entities\obj\Debug\Cleverest.Entities.dll
+d:\User\Desktop\Финальник\Cleverest.Entities\obj\Debug\Cleverest.Entities.pdb
+d:\User\Desktop\Финальник\Cleverest.Entities\obj\Debug\Cleverest.Entities.csprojAssemblyReference.cache

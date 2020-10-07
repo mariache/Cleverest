@@ -1,0 +1,11 @@
+d:\User\Desktop\Финальник\Cleverest.DAO\bin\Debug\Cleverest.DAO.dll
+d:\User\Desktop\Финальник\Cleverest.DAO\bin\Debug\Cleverest.DAO.pdb
+d:\User\Desktop\Финальник\Cleverest.DAO\bin\Debug\Cleverest.DAO.Interfaces.dll
+d:\User\Desktop\Финальник\Cleverest.DAO\bin\Debug\Cleverest.DAO.Interfaces.pdb
+d:\User\Desktop\Финальник\Cleverest.DAO\obj\Debug\Cleverest.DAO.csprojAssemblyReference.cache
+d:\User\Desktop\Финальник\Cleverest.DAO\obj\Debug\Cleverest.DAO.csproj.CoreCompileInputs.cache
+d:\User\Desktop\Финальник\Cleverest.DAO\obj\Debug\Cleverest.DAO.csproj.CopyComplete
+d:\User\Desktop\Финальник\Cleverest.DAO\obj\Debug\Cleverest.DAO.dll
+d:\User\Desktop\Финальник\Cleverest.DAO\obj\Debug\Cleverest.DAO.pdb
+d:\User\Desktop\Финальник\Cleverest.DAO\bin\Debug\Cleverest.Entities.dll
+d:\User\Desktop\Финальник\Cleverest.DAO\bin\Debug\Cleverest.Entities.pdb
