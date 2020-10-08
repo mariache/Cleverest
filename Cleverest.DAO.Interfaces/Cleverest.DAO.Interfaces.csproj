@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAuthentificationDAO.cs" />
+    <Compile Include="IComplaintDAO.cs" />
     <Compile Include="IQuestionDAO.cs" />
     <Compile Include="IRatingDAO.cs" />
     <Compile Include="IRoleDAO.cs" />

@@ -17,7 +17,6 @@ namespace Cleverest.BLL.Interfaces
         Test GetById(string id);
         Test GetTestsByTopic(string topic);
         IEnumerable<Test> GetTestsForCheck();
-        IEnumerable<Complaint> GetComplaints();
         bool RemoveFromCheck(string id);
     }
 }

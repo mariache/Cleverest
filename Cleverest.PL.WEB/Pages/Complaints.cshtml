@@ -1,0 +1,54 @@
+﻿@using Cleverest.Common;
+@using Cleverest.Entities.Enums;
+@{
+    if (!User.Identity.IsAuthenticated || !User.IsInRole(AppRoles.Admin.ToString()))
+    {
+        Response.Redirect("/");
+    }
+
+    var complaintsLogic = Resolver.ComplaintLogic;
+
+    if (IsPost)
+    {
+        var complaintId = Request["id"];
+        complaintsLogic.Remove(complaintId);
+    }
+
+    Layout = "~/_basicLayout.cshtml";
+
+    var complaints = complaintsLogic.GetAll();
+
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            UserId
+        </div>
+        <div class="col-sm">
+            Text
+        </div>
+        <div class="col-sm">
+            Action
+        </div>
+
+    </div>
+    <hr />
+    @foreach (var complain in complaints)
+    {
+        <form action="~/Pages/Complaints" method="post">
+            <div class="row">
+                <div class="col-sm">
+                    @complain.UserId
+                </div>
+                <div class="col-sm">
+                    @complain.Text
+                </div>
+                <div class="col-sm">
+                    <button onclick="confirm()">DELETE</button>
+                </div>
+                <input type="hidden" name="id" value="@complain.Id" />
+            </div>
+        </form>
+    }
+</div>

@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthentificationDAO.cs" />
+    <Compile Include="ComplaintDAO.cs" />
+    <Compile Include="Enums.StoredProcedures\ComplaintProcedures.cs" />
     <Compile Include="Enums.StoredProcedures\QuestionProcedures.cs" />
     <Compile Include="Enums.StoredProcedures\RatingProcedures.cs" />
     <Compile Include="Enums.StoredProcedures\RoleProcedures.cs" />

@@ -164,30 +164,6 @@ namespace Cleverest.DAO
                 }
             }
         }
-        public IEnumerable<Complaint> GetComplaints()
-        {
-            using (var _connection = new SqlConnection(_connectionString))
-            {
-                var command = new SqlCommand(TestProcedures.GetComplaints.ToString(), _connection)
-                {
-                    CommandType = CommandType.StoredProcedure
-                };
-
-                _connection.Open();
-
-                var reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-
-                    yield return new Complaint
-                    {
-                        UserId = reader["UserId"] as string,
-                        Text = reader["Text"] as string
-                    };
-                }
-            }
-        }
         public bool AddTestForCheck(Test test)
         {
             using (var _connection = new SqlConnection(_connectionString))

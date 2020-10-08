@@ -9,11 +9,7 @@
         Response.Redirect("~/Pages/CheckTest");
     }
 
-    //if (!User.Identity.IsAuthenticated)
-    //{
-    //    Response.Redirect("/");
-    //}
-
+    
     var testLogic = Resolver.TestLogic;
 
     var testList = testLogic.GetTestsForCheck().ToArray();

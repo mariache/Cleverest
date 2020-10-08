@@ -14,7 +14,6 @@ namespace Cleverest.DAO.Enums.StoredProcedures
         GetTestById,
         GetTestsByTopic,
         GetTestsForCheck,
-        GetComplaints,
         AddTestForCheck,
         GetTestForCheck,
         RemoveFromCheck,

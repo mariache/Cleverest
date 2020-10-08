@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthentificationLogic.cs" />
+    <Compile Include="ComplaintLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionLogic.cs" />
     <Compile Include="RatingLogic.cs" />

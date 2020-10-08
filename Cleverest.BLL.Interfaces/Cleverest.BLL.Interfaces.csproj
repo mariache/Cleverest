@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAuthentificationLogic.cs" />
+    <Compile Include="IComplaintLogic.cs" />
     <Compile Include="IQuestionLogic.cs" />
     <Compile Include="IRatingLogic.cs" />
     <Compile Include="IRoleLogic.cs" />

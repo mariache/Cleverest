@@ -4,6 +4,7 @@
     Layout = null;
 
     var testLogic = Resolver.TestLogic;
+    var complaintsLogic = Resolver.ComplaintLogic;
 }
 
 
@@ -27,6 +28,9 @@
                 <div class="col-md-auto">
                     <a href="~/Pages/NewTest">Suggest a test</a>
                 </div>
+                <div class="col-md-auto">
+                    <a href="~/Pages/NewComplaint">Send complaint</a>
+                </div>
             }
 
             @if (User.IsInRole(AppRoles.Moderator.ToString()))
@@ -45,7 +49,7 @@
                     <a href="~/Pages/UsersList">Show users</a>
                 </div>
                 <div class="col-md-auto">
-                    <a href="~/Pages/Complaints">Сomplaints ( @testLogic.GetComplaints().Count() )</a>
+                    <a href="~/Pages/Complaints">Сomplaints ( @complaintsLogic.GetAll().Count() )</a>
                 </div>
             }
         </div>

@@ -17,7 +17,6 @@ namespace Cleverest.DAO.Interfaces
         Test GetTestForCheck(string id);
         Test GetTestsByTopic(string topic);
         IEnumerable<Test> GetTestsForCheck();
-        IEnumerable<Complaint> GetComplaints();
         bool RemoveFromCheck(string id);
 
     }

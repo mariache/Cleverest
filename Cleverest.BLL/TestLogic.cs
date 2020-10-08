@@ -44,10 +44,6 @@ namespace Cleverest.BLL
         {
             return _testDao.AddTestForCheck(test);
         }
-        public IEnumerable<Complaint> GetComplaints()
-        {
-            return _testDao.GetComplaints();
-        }
         public Test GetTestForCheck(string id)
         {
             return _testDao.GetTestForCheck(id);

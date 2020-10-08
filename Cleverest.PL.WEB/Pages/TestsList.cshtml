@@ -9,10 +9,10 @@
         Response.Redirect("~/Pages/TestPage");
     }
 
-    //if (!User.Identity.IsAuthenticated)
-    //{
-    //    Response.Redirect("/");
-    //}
+    if (!User.Identity.IsAuthenticated)
+    {
+        Response.Redirect("/");
+    }
 
     var testLogic = Resolver.TestLogic;
 

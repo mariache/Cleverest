@@ -1,0 +1,21 @@
+﻿@using Cleverest.Common;
+@using Cleverest.Entities;
+@{
+    Layout = "~/_basicLayout.cshtml";
+    var complaintLogic = Resolver.ComplaintLogic;
+    var userLogic = Resolver.UserLogic;
+
+    if (IsPost)
+    {
+        var text = Request["text"];
+        var userId = userLogic.GetUserId(User.Identity.Name);
+        complaintLogic.Add(new Complaint(text, userId));
+    }
+}
+
+<div class="container">
+    <form action="~/Pages/NewComplaint" method="post">
+        <div>Text : <textarea name="text"></textarea></div>
+        <button>Send</button>
+    </form>
+</div>

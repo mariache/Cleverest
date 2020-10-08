@@ -15,3 +15,5 @@ d:\User\Desktop\Финальник\Cleverest.Common\obj\Debug\Cleverest.Common.c
 d:\User\Desktop\Финальник\Cleverest.Common\obj\Debug\Cleverest.Common.csproj.CopyComplete
 d:\User\Desktop\Финальник\Cleverest.Common\obj\Debug\Cleverest.Common.dll
 d:\User\Desktop\Финальник\Cleverest.Common\obj\Debug\Cleverest.Common.pdb
+d:\User\Desktop\Финальник\Cleverest.Common\bin\Debug\log4net.dll
+d:\User\Desktop\Финальник\Cleverest.Common\bin\Debug\log4net.xml

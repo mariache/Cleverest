@@ -46,6 +46,16 @@ namespace Cleverest.Common
         private static readonly IRoleDAO _roleDao;
         public static IRoleLogic RoleLogic => _roleLogic;
         //public static IRoleDAO RoleDAO => _roleDao;
+
+        private static readonly IComplaintLogic _complaintLogic; 
+        private static readonly IComplaintDAO _complaintDao;
+        public static IComplaintLogic ComplaintLogic => _complaintLogic;
+        //public static IComplaintDAO ComplaintDAO => _complaintDao;
+
+
+        private static readonly ILogger _logger;
+        public static ILogger Logger => _logger;
+
         static Resolver()
         {
             _userDao = new UserDAO();
@@ -65,6 +75,11 @@ namespace Cleverest.Common
 
             _roleDao = new RoleDAO();
             _roleLogic = new RoleLogic(_roleDao);
+
+            _complaintDao = new ComplaintDAO();
+            _complaintLogic = new ComplaintLogic(_complaintDao);
+
+            _logger = new MyLogger();
 
         }
     }

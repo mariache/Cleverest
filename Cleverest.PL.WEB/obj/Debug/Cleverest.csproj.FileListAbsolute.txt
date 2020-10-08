@@ -178,3 +178,5 @@ d:\User\Desktop\Финальник\Cleverest.PL.WEB\obj\Debug\Cleverest.csproj.C
 d:\User\Desktop\Финальник\Cleverest.PL.WEB\obj\Debug\Cleverest.csproj.CopyComplete
 d:\User\Desktop\Финальник\Cleverest.PL.WEB\obj\Debug\Cleverest.dll
 d:\User\Desktop\Финальник\Cleverest.PL.WEB\obj\Debug\Cleverest.pdb
+d:\User\Desktop\Финальник\Cleverest.PL.WEB\bin\log4net.dll
+d:\User\Desktop\Финальник\Cleverest.PL.WEB\bin\log4net.xml

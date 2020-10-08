@@ -9,7 +9,7 @@
 
     string errorMessage = null;
 
-    
+    var logger = Resolver.Logger;
     var authLogic = Resolver.AuthentificationLogic;
     var userLogic = Resolver.UserLogic;
     var ratingLogic = Resolver.RatingLogic;
@@ -31,7 +31,7 @@
         else
         {
             var newUser = new User(login, password);
-
+            logger.Info($"User was registered! Id : {newUser.Id}");
             userLogic.Add(newUser);
 
             FormsAuthentication.SetAuthCookie(login, createPersistentCookie: true);
@@ -47,7 +47,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cleverest</title>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link href="~/Style/style.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
 </head>
 <body>
     <header class="container text-center" role="button">

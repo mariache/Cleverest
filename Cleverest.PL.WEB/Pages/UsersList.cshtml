@@ -6,11 +6,13 @@
         Response.Redirect("/");
     }
     var userLogic = Resolver.UserLogic;
+    var logger = Resolver.Logger;
 
     if (IsPost)
     {
         var userId = Request["id"];
         userLogic.Remove(userId);
+        logger.Info($"User was deleted! Id : {userId}");
 
     }
     Layout = "~/_basicLayout.cshtml";
